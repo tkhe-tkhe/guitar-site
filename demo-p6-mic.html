@@ -225,7 +225,7 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
 .gauge .needle{position:absolute;top:-3px;bottom:-3px;width:4px;margin-left:-2px;background:var(--ink);border-radius:2px;display:none}
 .gauge[data-on="in"] .needle,.gauge[data-on="out"] .needle{display:block}
 .gauge[data-on="in"] .needle{background:var(--ok)}
-</style></head><body data-lesson="demo"><div class="wrap"><header class="top"><div class="kicker">Курс Claude · демонстрация движка · не урок</div><h1>Микрофон: нота, подтяжка, атака</h1><p class="lead">Микрофон заменяет самооценку только там, где измерение проверено: высота ноты, центы подтяжки и момент атаки под метроном. Чистоту аккорда, глушение, звук и музыкальность он не оценивает — для них остаются критерий самооценки и разбор записи. Подключение: FM9 по USB (пресет «чистый» — высота определяется точнее, чем на перегрузе) или встроенный микрофон компьютера у колонок. Если микрофон недоступен, каждый тренажёр работает без него.</p><nav class="demonav"><a href="#connect">Подключение</a><a href="#find-note">Нота на грифе</a><a href="#bend">Подтяжка в цель</a><a href="#attack">Атака под метроном</a></nav></header><section class="block demo" id="connect"><h2>Подключение</h2><p class="stat ref">архитектура §9 · строй E6, режим std</p><div class="micpanel"></div></section><section class="block demo" id="find-note"><h2>Нота на грифе</h2><p class="stat ref">архитектура §16.6 · высота отдельной ноты</p><p>Появляется нота — сыграй её на гитаре в ладах 0–12. Если указана октава, нужна именно эта звучащая высота: G3 — это 3/0 или 4/5, но не 1/3. С микрофоном время идёт от показа ноты до распознавания; без микрофона нажми «Сыграл», послушай ноту и отметь, совпал ли твой звук.</p><div class="micblk" data-block="notes-e6" data-kind="mic-note"></div></section><section class="block demo" id="bend"><h2>Подтяжка в цель</h2><p class="stat ref">архитектура §16.6 · центы подтяжки</p><p>Сначала послушай цель, потом сыграй начальную ноту и подтяни. Засчитывается, когда звук устойчиво держится в допуске не меньше указанного времени. Стрелка показывает, сколько центов до цели: минус — недотянул, плюс — перетянул.</p><div class="micblk" data-block="bends-e6" data-kind="mic-bend"></div></section><section class="block demo" id="attack"><h2>Атака под метроном</h2><p class="stat ref">архитектура §9, §16.6 · момент атаки, мс</p><p>Один раз откалибруй вход. Встроенный микрофон сам слышит щелчки из колонок — это точный способ. Для FM9 по USB щелчок во вход не попадает, поэтому калибровка — игрой под щелчок: тогда сдвиг считается от твоей собственной привычки, а разброс — честный. Потом играй глухой удар на каждую долю. Без калибровки страница показывает только разброс.</p><div class="micblk" data-block="attack-80" data-kind="mic-timing"></div></section><footer>Курс Claude по электрогитаре · файл самостоятелен и работает без сети; звук синтезируется в браузере. Результаты хранятся в этом браузере.<div class="build">версия 0.3.0 · коммит 817a81b31ff7 · сборка 2026-11-24 10:45 UTC · схема lesson/2 · П5 · ред. 6 (2026-11-22)</div></footer></div><script type="application/json" id="cgc-page">{"lesson": "demo", "kind": "demo", "mic": true, "title": "Микрофон: нота, подтяжка, атака", "page": "demo-p6-mic", "courseVersion": "0.3.0", "commit": "817a81b31ff7", "tunings": [{"id": "E6", "strings": ["E4", "B3", "G3", "D3", "A2", "E2"], "title": "E standard, 6 струн"}], "micTuning": "E6", "tuningOf": {"notes-e6": "E6", "bends-e6": "E6", "attack-80": "E6"}, "tasks": {}, "items": {}, "steps": [], "glossary": {}, "rules": {}, "blocks": {"notes-e6": {"id": "notes-e6", "type": "mic", "kind": "mic-note", "frets": [0, 12], "items": [{"id": "g3", "pitch": "G3"}, {"id": "c4", "pitch": "C4"}, {"id": "fs2", "pitch": "F#2"}, {"id": "a3", "pitch": "A3"}, {"id": "d4", "pitch": "D4"}, {"id": "bb2", "pitch": "Bb2"}, {"id": "e3", "pitch": "E3"}, {"id": "cs-any", "pclass": "C#"}]}, "bends-e6": {"id": "bends-e6", "type": "mic", "kind": "mic-bend", "items": [{"id": "g-string-tone", "pos": "3/7", "interval": "M2", "to": "E4", "cents": 10, "hold_ms": 300}, {"id": "b-string-tone", "pos": "2/8", "interval": "M2", "to": "A4", "cents": 10, "hold_ms": 300}, {"id": "b-string-half", "pos": "2/10", "interval": "m2", "to": "Bb4", "cents": 10, "hold_ms": 300}, {"id": "g-string-tone-half", "pos": "3/9", "interval": "m3", "to": "G4", "cents": 15, "hold_ms": 300}]}, "attack-80": {"id": "attack-80", "type": "mic", "kind": "mic-timing", "bpm": 80, "count_in": 4, "beats": 8, "tolerance_ms": 25}}}</script><script>/* ---- theory.js ---- */
+</style></head><body data-lesson="demo"><div class="wrap"><header class="top"><div class="kicker">Курс Claude · демонстрация движка · не урок</div><h1>Микрофон: нота, подтяжка, атака</h1><p class="lead">Микрофон заменяет самооценку только там, где измерение проверено: высота ноты, центы подтяжки и момент атаки под метроном. Чистоту аккорда, глушение, звук и музыкальность он не оценивает — для них остаются критерий самооценки и разбор записи. Подключение: FM9 по USB (пресет «чистый» — высота определяется точнее, чем на перегрузе) или встроенный микрофон компьютера у колонок. Если микрофон недоступен, каждый тренажёр работает без него.</p><nav class="demonav"><a href="#connect">Подключение</a><a href="#find-note">Нота на грифе</a><a href="#bend">Подтяжка в цель</a><a href="#attack">Атака под метроном</a></nav></header><section class="block demo" id="connect"><h2>Подключение</h2><p class="stat ref">архитектура §9 · строй E6, режим std</p><div class="micpanel"></div></section><section class="block demo" id="find-note"><h2>Нота на грифе</h2><p class="stat ref">архитектура §16.6 · высота отдельной ноты</p><p>Появляется нота — сыграй её на гитаре в ладах 0–12. Если указана октава, нужна именно эта звучащая высота: G3 — это 3/0 или 4/5, но не 1/3. С микрофоном время идёт от показа ноты до распознавания; без микрофона нажми «Сыграл», послушай ноту и отметь, совпал ли твой звук.</p><div class="micblk" data-block="notes-e6" data-kind="mic-note"></div></section><section class="block demo" id="bend"><h2>Подтяжка в цель</h2><p class="stat ref">архитектура §16.6 · центы подтяжки</p><p>Сначала послушай цель, потом сыграй начальную ноту и подтяни. Засчитывается, когда звук устойчиво держится в допуске не меньше указанного времени. Стрелка показывает, сколько центов до цели: минус — недотянул, плюс — перетянул.</p><div class="micblk" data-block="bends-e6" data-kind="mic-bend"></div></section><section class="block demo" id="attack"><h2>Атака под метроном</h2><p class="stat ref">архитектура §9, §16.6 · момент атаки, мс</p><p>Один раз откалибруй вход. Встроенный микрофон сам слышит щелчки из колонок — это точный способ. Для FM9 по USB щелчок во вход не попадает, поэтому калибровка — игрой под щелчок: тогда сдвиг считается от твоей собственной привычки, а разброс — честный. Потом играй глухой удар на каждую долю. Без калибровки страница показывает только разброс.</p><div class="micblk" data-block="attack-80" data-kind="mic-timing"></div></section><footer>Курс Claude по электрогитаре · файл самостоятелен и работает без сети; звук синтезируется в браузере. Результаты хранятся в этом браузере.<div class="build">версия 0.3.0 · коммит e28a489c3bb3 · сборка 2026-11-24 11:45 UTC · схема lesson/2 · П5 · ред. 6 (2026-11-22)</div></footer></div><script type="application/json" id="cgc-page">{"lesson": "demo", "kind": "demo", "mic": true, "title": "Микрофон: нота, подтяжка, атака", "page": "demo-p6-mic", "courseVersion": "0.3.0", "commit": "e28a489c3bb3", "tunings": [{"id": "E6", "strings": ["E4", "B3", "G3", "D3", "A2", "E2"], "title": "E standard, 6 струн"}], "micTuning": "E6", "tuningOf": {"notes-e6": "E6", "bends-e6": "E6", "attack-80": "E6"}, "tasks": {}, "items": {}, "steps": [], "glossary": {}, "rules": {}, "blocks": {"notes-e6": {"id": "notes-e6", "type": "mic", "kind": "mic-note", "frets": [0, 12], "items": [{"id": "g3", "pitch": "G3"}, {"id": "c4", "pitch": "C4"}, {"id": "fs2", "pitch": "F#2"}, {"id": "a3", "pitch": "A3"}, {"id": "d4", "pitch": "D4"}, {"id": "bb2", "pitch": "Bb2"}, {"id": "e3", "pitch": "E3"}, {"id": "cs-any", "pclass": "C#"}]}, "bends-e6": {"id": "bends-e6", "type": "mic", "kind": "mic-bend", "items": [{"id": "g-string-tone", "pos": "3/7", "interval": "M2", "to": "E4", "cents": 10, "hold_ms": 300}, {"id": "b-string-tone", "pos": "2/8", "interval": "M2", "to": "A4", "cents": 10, "hold_ms": 300}, {"id": "b-string-half", "pos": "2/10", "interval": "m2", "to": "Bb4", "cents": 10, "hold_ms": 300}, {"id": "g-string-tone-half", "pos": "3/9", "interval": "m3", "to": "G4", "cents": 15, "hold_ms": 300}]}, "attack-80": {"id": "attack-80", "type": "mic", "kind": "mic-timing", "bpm": 80, "count_in": 4, "beats": 8, "tolerance_ms": 25}}}</script><script>/* ---- theory.js ---- */
 /* theory.js — музыкальная модель в браузере (архитектура §2.9), пакет П3.
  * Паритет с course/theory.py проверяется на общих эталонах tests/fixtures (V5).
  * В П3: нота, класс, строй и позиция, интервал, транспозиция, роль/ступень, аккорд
@@ -3371,6 +3371,23 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
   // Выброс короткий: средняя энергия полосы в блоках HB_T0…HB_T1 после кандидата (≈ 13–23 мс) не выше HB_FALL его пика —
   // шум медиатора гаснет за миллисекунды, а шумовая вставка или скрежет длятся (провал высоты с шумом — не удар).
   var HB_HZ = 5000, HB_PEAKR = 4, HB_SHARE = 0.05, HB_T0 = 10, HB_T1 = 17, HB_FALL = 0.25;
+  // Ред. 7, R103/R106: короткий выброс есть и у постороннего звука — щелчка, стука по корпусу, короткого скрежета поверх
+  // звучащей струны, — и у резкого обрыва звука. Щипок отличается тем, что после него звучит НОВЫЙ тон: новая струна или та
+  // же с новой фазой и уровнем. Новизна тона: звук до выброса (полоса ниже TN_LP) периодичен — период T по разностной
+  // функции окна TN_WP перед моментом − TN_M; окно TN_W через TN_D0 после момента (посторонний звук до 8 мс уже кончился)
+  // предсказывается тем же звуком n·T раньше (целое n — фаза продолжается), с усилением 0…TN_G (затухание, не рост) и
+  // сдвигом ±TN_DL отсчёта (точность T). Доля непредсказанной энергии N < TN_MIN — звук продолжается: выброс посторонний,
+  // не щипок. Энергия после < TN_STOP энергии до — звук оборвался (R106): тоже не щипок. Звук до выброса не периодичен
+  // (тишина, шум, другой удар рядом) — новизну не доказать и не опровергнуть: выброс остаётся щипком, как в ред. 6.
+  // Пороги (сетка Codex 28 и пробы ред. 7): повторный щипок G3 над хвостом 30–98 % — N ≥ 0,0999; вторая нота после громкой
+  // высокой — N ≥ 0,109; щелчок 2,5 мс, тон 8,3 кГц 2,5 мс, скрежет 8 мс поверх хвоста — N < 10⁻⁴; поверх биений и
+  // негармоничной струны (B до 3·10⁻⁴) — N ≤ 0,019.
+  var TN_LP = 4000, TN_WP = 0.016, TN_CM = 0.25, TN_M = 0.002, TN_D0 = 0.010, TN_W = 0.012, TN_DL = 1, TN_G = 1.15, TN_MIN = 0.05,
+      TN_STOP = 0.01, TN_MINHZ = 38, TN_MAXHZ = 1500;
+  function lopass(f, sr) {  // RBJ: ФНЧ 2-го порядка, Q = 1/√2, a0 = 1
+    var w = 2 * Math.PI * f / sr, al = Math.sin(w) / Math.SQRT2, a0 = 1 + al, c = Math.cos(w);
+    return { b0: (1 - c) / 2 / a0, b1: (1 - c) / a0, b2: (1 - c) / 2 / a0, a1: -2 * c / a0, a2: (1 - al) / a0, x1: 0, x2: 0, y1: 0, y2: 0 };
+  }
   function hipass(f, sr) {   // RBJ: ФВЧ 2-го порядка, Q = 1/√2, a0 = 1
     var w = 2 * Math.PI * f / sr, al = Math.sin(w) / Math.SQRT2, a0 = 1 + al, c = Math.cos(w);
     return { b0: (1 + c) / 2 / a0, b1: -(1 + c) / a0, b2: (1 + c) / 2 / a0, a1: -2 * c / a0, a2: (1 - al) / a0, x1: 0, x2: 0, y1: 0, y2: 0 };
@@ -3406,13 +3423,15 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
   function nstep(q, x) { var y = q.b0 * x + q.b1 * q.x1 + q.b2 * q.x2 - q.a1 * q.y1 - q.a2 * q.y2; q.x2 = q.x1; q.x1 = x; q.y2 = q.y1; q.y1 = y; return y; }
   function OnsetDetector(sr, onOnset, opt) {
     this.sr = sr; this.on = onOnset; this.prev = 0; this.idx = 0; this.blk = 0; this.acc = 0; this.k = 0;
-    this.hist = []; this.y = new Float32Array(OB * 64); this.x = new Float32Array(OB * 64); this.pend = []; this.last = -1e9;
+    // ред. 7: кольцо 128 блоков (≈ 170 мс при 48 кГц) — новизне тона нужен звук за ≈ 50 мс до удара и 22 мс после
+    this.hist = []; this.y = new Float32Array(OB * 128); this.x = new Float32Array(OB * 128); this.pend = []; this.last = -1e9;
     this.trig = -1e9; this.t0 = null; this.clickHz = (opt && opt.clickHz) || null; this.dropped = 0; this.mixed = 0; this.lastMixed = -1e9; this.preMean = 0;
     this.eb = new Float32Array(O_RING); this.ebMask = new Uint8Array(O_RING); this.contDropped = 0;
     this.hb = new Float32Array(O_RING); this.hacc = 0; this.hps = [hipass(HB_HZ, sr), hipass(HB_HZ, sr)]; this.bursts = 0;
-    this.hhist = []; this.yh = new Float32Array(OB * 64);
+    this.hhist = []; this.yh = new Float32Array(OB * 128); this.xl = new Float32Array(OB * 128); this.lp = lopass(TN_LP, sr); this.foreign = 0;
     this.notches = this.clickHz ? this.clickHz.map(function (f) { return notch(f, sr); }) : [];
-    this.wait = Math.max(this.clickHz ? O_AHEAD + Math.ceil(CLICK_WIN / OB) + 1 : O_AHEAD, HB_T1 + 1);   // ред. 6: краткость выброса
+    this.wait = Math.max(this.clickHz ? O_AHEAD + Math.ceil(CLICK_WIN / OB) + 1 : O_AHEAD, HB_T1 + 1,   // ред. 6: краткость выброса
+                         O_AHEAD + Math.ceil((TN_D0 + TN_W) * sr / OB) + 1);                     // ред. 7: окно новизны тона
   }
   OnsetDetector.prototype.push = function (chunk, t0) {
     if (this.t0 === null) this.t0 = t0 - this.idx / this.sr;   // время отсчёта с индексом 0
@@ -3421,7 +3440,7 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
       var x = chunk[i], xs = x;
       for (var q = 0; q < this.notches.length; q++) xs = nstep(this.notches[q], xs);
       var y = xs - this.prev; this.prev = xs;
-      Y[this.idx % cap] = y; this.x[this.idx % cap] = x;
+      Y[this.idx % cap] = y; this.x[this.idx % cap] = x; this.xl[this.idx % cap] = nstep(this.lp, x);
       var yh = nstep(this.hps[1], nstep(this.hps[0], y));
       this.yh[this.idx % cap] = yh;
       this.acc += y * y; this.hacc += yh * yh; this.k++; this.idx++;
@@ -3494,10 +3513,45 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
     var after = 0, na = 0;
     for (k = b + HB_T0; k <= b + HB_T1 && k < this.blk; k++) { after += this.hb[k % O_RING]; na++; }
     var burst = candH >= HB_PEAKR * priorH && candH >= HB_SHARE * candE && candH > O_GATE && (!na || after / na <= HB_FALL * candH);
+    // ред. 7, R103/R106: выброс без нового тона (посторонний короткий звук над звучащей нотой, обрыв звука) — не щипок
+    if (burst && this.toneNew(at) === false) { burst = false; this.foreign++; }
     if (!burst && candE < O_PEAKR * prior) { this.contDropped++; return; }
     if (burst) this.bursts++;
     this.last = t; this.maskFrom(b);   // выброс самого удара не служит опорой следующему (быстрые ноты подряд)
     this.on(this.t0 + t, peak, 'strike', raw, burst);
+  };
+  // Ред. 7: новый ли тон после момента at (отсчёт). false — звук до него периодичен и продолжается с той же фазой (N < TN_MIN)
+  // или оборвался; true — новый тон; null — звук до него не периодичен или данных не хватает (решения нет).
+  OnsetDetector.prototype.toneNew = function (at) {
+    var X = this.xl, cap = X.length, sr = this.sr, e = at - Math.round(TN_M * sr), s = at + Math.round(TN_D0 * sr), W = Math.round(TN_W * sr);
+    var Wp = Math.round(TN_WP * sr), tmin = Math.floor(sr / TN_MAXHZ), tmax = Math.ceil(sr / TN_MINHZ), i, t, v;
+    if (s + W > this.idx || e - Wp - 2 * tmax - W < this.idx - cap || e - Wp - tmax < 0) return null;
+    function xa(p) { var k = Math.floor(p), f = p - k; return X[k % cap] * (1 - f) + X[(k + 1) % cap] * f; }
+    var pre = 0, post = 0;
+    for (i = e - W; i < e; i++) pre += X[i % cap] * X[i % cap];
+    for (i = s; i < s + W; i++) post += X[i % cap] * X[i % cap];
+    if (pre > 0 && post < TN_STOP * pre) return false;                         // R106: звук оборвался
+    // период звука до момента: нормированная разностная функция (как YIN), первый провал глубже TN_CM
+    var d = new Float64Array(tmax + 2), run = 0, best = -1;
+    d[0] = 1;
+    for (t = 1; t <= tmax + 1; t++) {
+      var sum = 0;
+      for (i = e - Wp; i < e; i++) { v = X[i % cap] - X[(i - t) % cap]; sum += v * v; }
+      run += sum; d[t] = run > 0 ? sum * t / run : 1;
+    }
+    for (t = tmin; t <= tmax; t++) if (d[t] < TN_CM && d[t] <= d[t - 1] && d[t] <= d[t + 1]) { best = t; while (best + 1 <= tmax && d[best + 1] < d[best]) best++; break; }
+    if (best < 0) return null;
+    var p0 = d[best - 1], q0 = d[best], r0 = d[best + 1], den = p0 - 2 * q0 + r0, T = best + (den > 0 ? (p0 - r0) / (2 * den) : 0);
+    var n = Math.ceil((s + W - e) / T), N = Infinity;
+    for (var dd = -TN_DL; dd <= TN_DL + 1e-9; dd += 0.25) {
+      var L = n * T + dd, ab = 0, bb = 0, aa = 0, g, r = 0;
+      for (i = s; i < s + W; i++) { var A = X[i % cap], B = xa(i - L); ab += A * B; bb += B * B; aa += A * A; }
+      g = bb > 0 ? Math.max(0, Math.min(TN_G, ab / bb)) : 0;
+      for (i = s; i < s + W; i++) { v = X[i % cap] - g * xa(i - L); r += v * v; }
+      N = Math.min(N, aa > 0 ? r / aa : 0);
+    }
+    this.lastNovelty = N;
+    return N >= TN_MIN;
   };
   // Доля энергии окна [at, at + CLICK_WIN) на частотах щелчка (Гёрцель; окно Ханна), 0…1.
   OnsetDetector.prototype.clickShare = function (at) {
@@ -3616,7 +3670,8 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
                 lagLimit: lagLimit, modeFor: modeFor, nearest: nearest, centsBetween: centsBetween, detect: detect,
                 Analyzer: Analyzer, NoteTracker: NoteTracker, background: background, EP: { RATIO: EP_RATIO, RISE: EP_RISE, WARM: EP_WARM, DROP: EP_DROP, HIST: EP_HIST, WIN: EP_WIN, FROM: EP_FROM, PRE: EP_PRE, POST: EP_POST, KEEP: EP_KEEP, REF: EP_REF } };
   CGC.onsets = { Detector: OnsetDetector, params: { block: OB, hist: OB_HIST, skip: O_SKIP, ratio: O_RATIO, gate: O_GATE, refractory: O_REFR, ahead: O_AHEAD, frac: O_FRAC, retrig: O_RETRIG,
-                                                     clickWin: CLICK_WIN, clickPure: CLICK_PURE, clickMixed: CLICK_MIXED, notchQ: NOTCH_Q } };
+                                                     clickWin: CLICK_WIN, clickPure: CLICK_PURE, clickMixed: CLICK_MIXED, notchQ: NOTCH_Q,
+                                                     toneMin: TN_MIN, toneStop: TN_STOP } };
 
   /* ---------- вход ---------- */
   // Отсчёты входа с номером кадра контекста. Такт без входа — тишина. Если Chrome не вызвал process() на
@@ -3974,7 +4029,7 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
     this.stopListen();
     S.stop();   // звук прошлого ответа не должен попасть в микрофон (R80)
     this.i++;
-    this.q('.mnext').hidden = true; this.q('.mself').hidden = true; this.q('.mfb').innerHTML = ''; this.micFb = false; this.board.clear();
+    this.q('.mnext').hidden = true; this.q('.mself').hidden = true; this.q('.mfb').innerHTML = ''; this.micFb = false; this.selfFb = false; this.board.clear();
     if (this.i >= this.items.length) { this.end(); return; }
     var it = this.items[this.i], mic = micOn();
     this.mic = mic; this.first = true; this.wrong = null; this.pressMs = null;
@@ -3993,6 +4048,7 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
     this.q('.mplayed').hidden = mic; this.q('.mskip').hidden = !mic;
     if (mic) {
       this.q('.mself').hidden = true; this.pressMs = null;   // R88: ручной диалог этой попытки закрыт — ответ теперь микрофоном
+      if (this.selfFb) { this.q('.mfb').innerHTML = ''; this.selfFb = false; }   // R105: и его подсказка «Так звучит … Время по нажатию»
       this.session = M.input.session;
       // R87: засчитывается новый звуковой эпизод или высота, которой не было в фоне до вопроса
       // R91: фон копится P.EP.WARM с начала сеанса; если кадров сеанса ещё нет — с первого кадра, который получит трекер
@@ -4050,7 +4106,7 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
     this.q('.mplayed').hidden = true; this.q('.mself').hidden = false;
     this.reveal();
     S.play(S.notePlan(it.sound));
-    this.micFb = false;
+    this.micFb = false; this.selfFb = true;
     this.q('.mfb').innerHTML = 'Так звучит ' + esc(it.label) + (it.any ? ' (одна из октав)' : '') + '. Время по нажатию: ' + fmtS(this.pressMs / 1000) + '.';
   };
   NoteTrainer.prototype.reveal = function () {
@@ -4121,6 +4177,10 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
       modeLine(self);
       // R82: микрофон выключен или «Без микрофона» во время попытки — попытка останавливается, без оценки микрофоном
       if (self.host.getAttribute('data-state') === 'listening' && (!micOn() || M.input.session !== self.session)) self.abort();
+      // R105: вернулся микрофон — ручное сравнение («Попал в цель на слух?» и «Так звучит цель …») этой попытке не принадлежит
+      if (micOn() && self.selfFb && self.host.getAttribute('data-state') === 'question') {
+        self.q('.mself').hidden = true; self.q('.mfb').innerHTML = ''; self.selfFb = false;
+      }
     });
     this.select(0); modeLine(this);
     host.setAttribute('data-ready', '1');
@@ -4135,16 +4195,16 @@ a.rulelink{color:#7a3e12;text-decoration:none;border-bottom:1px dotted #7a3e12}
     var w = Math.min(100, it.cents);   // шкала −100…+100 центов: зона ±cents
     this.q('.gauge .zone').style.left = (50 - w / 2) + '%'; this.q('.gauge .zone').style.width = w + '%';
     this.q('.gauge .needle').style.left = '0'; this.q('.gauge').setAttribute('data-on', 'no');
-    this.q('.mfb').innerHTML = ''; this.q('.greading').textContent = '—'; this.q('.mself').hidden = true;
+    this.q('.mfb').innerHTML = ''; this.q('.greading').textContent = '—'; this.q('.mself').hidden = true; this.selfFb = false;
     this.q('.bstart').hidden = false; this.q('.bstop').hidden = true;
     this.host.setAttribute('data-item', it.id); this.host.setAttribute('data-state', 'question');
   };
   BendTrainer.prototype.start = function () {
     var self = this, it = this.cur;
-    this.q('.mfb').innerHTML = '';
+    this.q('.mfb').innerHTML = ''; this.selfFb = false;
     if (!micOn()) {   // без микрофона: цель звучит, ученик сравнивает на слух
       S.play(S.notePlan(it.target));
-      this.q('.mself').hidden = false;
+      this.q('.mself').hidden = false; this.selfFb = true;
       this.q('.mfb').textContent = 'Так звучит цель ' + it.to + '. Сыграй подтяжку и сравни на слух: доходит ли звук ровно до цели и держится ли.';
       return;
     }
